@@ -1,0 +1,211 @@
+@media screen and (max-width:768px) {
+    .navbar{
+        width: 90%;
+
+    }
+    .logo img{
+       
+        min-width: 150px; /* Minimum 100px altında küçülmesini önler */
+        width: 50%; /* Mobilde daha iyi görünmesi için yüzdelik boyut */
+        height: auto;
+        
+    }
+    #menu_bar{
+        display: grid !important;
+        color: #000000;
+        position: absolute;
+        right: 5%;
+        top: 20%;
+        border: 1px solid rgb(255, 255, 255);
+        width: 30px;
+        height: 30px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+    .nav_links{
+        flex-direction: column;
+        position: absolute;
+        background: brown;
+        width: 100%;
+        left: 0;
+        padding: 0;
+        top: 0px;
+        transition: top 0.3s ease-in-out;
+    }
+    .nav_links li a{
+        border-bottom: 1px solid #fff;
+        display:block;
+        border-radius: 0;
+        padding: 10px 0;
+        margin: 0 20px;
+    }
+    .nav_links li:last-child a{
+        border-bottom: none;
+    }
+    .inner_anasayfa{
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+    .child_anasayfa{
+        flex-basis: 100%;
+    }
+    .child_anasayfa:last-child{
+        margin-bottom: 20px;
+    }
+    .child_anasayfa h1{
+        font-size: 30px;
+        line-height: 50px;
+    }
+    .child_anasayfa p{
+font-size: 20px;
+    }
+    /*ürünler*/
+    .innerurunler {
+        display: flex;
+        flex-direction: column; /* Mobilde öğeleri alt alta sıralar */
+        align-items: center; /* Ortalar */
+    }
+    .innerurunler_child{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+    /*iletişim*/
+
+.inner_contact {
+    display: flex; /* Flex düzenini aç */
+    flex-direction: column; /* Öğeleri dikey sıralar */
+    align-items: center; /* Öğeleri yatayda ortalar */
+    margin-bottom: 30px; /* Alt boşluk */
+    width: 100%; /* Genişliği ekranın tamamına yay */
+}
+
+.inner_contact img {
+    max-width: 100%; /* Resmin ekranın genişliğine uyumlu olmasını sağlar */
+    height: auto; /* Yüksekliğin oranlı kalmasını sağlar */
+    margin-bottom: 20px; /* Fotoğraf ile metin arasına boşluk ekler */
+}
+.footer-container {
+    flex-direction: column; /* Ekran boyutu küçükse öğeleri alt alta sıralar */
+    align-items: center;
+}
+
+.footer-item {
+    width: 50%; /* Küçük ekranlarda her bir öğe tam genişlik alır */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+
+}
+
+@media (max-width: 768px) {
+    /* Ana kalite container'ı */
+    .inner_testi {
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* Üst kısım - resim ve ana metin */
+    .kalite-intro {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* Resim container'ı */
+    .testi_img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    /* Resim */
+    .testi_img img {
+        width: 90%;
+        height: auto;
+    }
+
+    /* Ana metin */
+    .kalite-ana-metin {
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    /* Kalite başlığı */
+    .kalite-baslik {
+        text-align: center;
+        width: 100%;
+        margin: 25px 0;
+        font-size: 20px;
+    }
+
+    /* Kartlar container'ı */
+    .kalite-kartlar {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    /* Her bir kart */
+    .kalite-kart {
+        width: 100%;
+        padding: 15px;
+        margin: 0;
+        text-align: center;
+        background: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .kalite-kart h4 {
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    .kalite-kart p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+}
+
+/* Daha küçük ekranlar için */
+@media (max-width: 480px) {
+    .testi_img img {
+        width: 95%;
+    }
+
+    .kalite-ana-metin {
+        width: 95%;
+        font-size: 14px;
+    }
+
+    .kalite-baslik {
+        font-size: 18px;
+    }
+
+    .kalite-kart {
+        padding: 12px;
+    }
+
+    .kalite-kart h4 {
+        font-size: 16px;
+    }
+
+    .kalite-kart p {
+        font-size: 13px;
+    }
+    
+}
+
+

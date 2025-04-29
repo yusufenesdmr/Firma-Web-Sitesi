@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayakkabılık - Ekrem Suni Deri</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/style6.css">
+    <link rel="stylesheet" href="../css/responsive6.css">
+    <link rel="stylesheet" href="../css/all6.css">
+    <style>
+        .urun-detay {
+            padding-top: 120px;
+            padding-bottom: 50px;
+        }
+        .urun-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .urun-container h1 {
+            
+            text-align: center;
+            color: #940000;
+            margin-bottom: 40px;
+            font-size: 36px;
+        }
+        .urun-content {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+        .urun-galeri {
+            flex: 1;
+        }
+        .urun-galeri img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .urun-galeri img:hover {
+            transform: scale(1.02);
+        }
+        .urun-bilgi {
+            flex: 1;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(148, 0, 0, 0.1);
+        }
+        .urun-bilgi h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-bottom: 2px solid #940000;
+            padding-bottom: 10px;
+        }
+        .urun-bilgi ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        .urun-bilgi ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        .urun-bilgi ul li i {
+            color: #940000;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+        .urun-aciklama {
+            line-height: 1.8;
+            color: #666;
+            margin: 30px 0;
+            font-size: 16px;
+        }
+        .iletisim-btn {
+            display: inline-block;
+            background: #940000;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        .iletisim-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(148, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                width: 90%;
+            }
+            .logo img {
+                min-width: 150px;
+                width: 50%;
+                height: auto;
+            }
+            #menu_bar {
+                display: grid !important;
+                color: #000000;
+                position: absolute;
+                right: 5%;
+                top: 20%;
+                border: 1px solid rgb(255, 255, 255);
+                width: 30px;
+                height: 30px;
+                justify-content: center;
+                align-items: center;
+                border-radius: 2px;
+                cursor: pointer;
+            }
+            .nav_links {
+                flex-direction: column;
+                position: absolute;
+                background: brown;
+                width: 100%;
+                left: 0;
+                padding: 0;
+                top: -400px;
+                transition: top 0.3s ease-in-out;
+            }
+            .nav_links.active {
+                top: 100%;
+            }
+            .nav_links li a {
+                border-bottom: 1px solid #fff;
+                display: block;
+                border-radius: 0;
+                padding: 10px 0;
+                margin: 0 20px;
+                color: white;
+            }
+            .nav_links li:last-child a {
+                border-bottom: none;
+            }
+            .urun-content {
+                flex-direction: column;
+            }
+            .urun-galeri, .urun-bilgi {
+                width: 100%;
+            }
+            .urun-container h1 {
+                font-size: 28px;
+            }
+        }
+
+        .galeri-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .galeri-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .galeri-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .galeri-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .galeri-text-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            padding: 0 5px;
+        }
+
+        .galeri-text-left, .galeri-text-right {
+            margin: 0;
+            font-size: 16px;
+            color: #000000;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .galeri-grid {
+                gap: 15px;
+            }
+            .galeri-item img {
+                height: 200px;
+            }
+            .galeri-text-left, .galeri-text-right {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .galeri-grid {
+                grid-template-columns: 1fr;
+            }
+            .galeri-item img {
+                height: 180px;
+            }
+        }
+
+       
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../img/WhatsApp Görsel 2025-02-17 saat 16.44.06_618d3fe4.jpg" alt="Logo">
+                </a>
+            </div>
+            <div id="menu_bar" class="fas fa-bars"></div>
+            <ul class="nav_links">
+                <li><a href="../index.html">Ana Sayfa</a></li>
+                <li><a href="../index.html#urunler">Ürünler</a></li>
+                <li><a href="../index.html#KalitePolitikamız">Kalite Politikamız</a></li>
+                <li><a href="../index.html#iletisim">İletişim</a></li>
+                <li><a href="../index.html#Hakkımızda">Hakkımızda</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="urun-detay">
+        <div class="urun-container">
+            <h1>AYAKKABILIK SUNİ DERİ</h1>
+            <div class="urun-content">
+                <div class="urun-galeri">
+                    <div class="galeri-grid">
+                        <!-- Üst sıra -->
+                        <div class="galeri-item">
+                            <img src="/img/apollo1.jpg" alt="Ayakkabılık Model 1">
+                            <div class="galeri-text-container">
+                                <p class="galeri-text-left">Apollo</p>
+                                <p class="galeri-text-right">Coventry</p>
+                            </div>
+                        </div>
+                        <div class="galeri-item">
+                            <img src="/img/apollo2.jpg" alt="Ayakkabılık Model 2">
+                            <div class="galeri-text-container">
+                                <p class="galeri-text-left">Elite </p>
+                                <p class="galeri-text-right">Fiber</p>
+                            </div>
+                        </div>
+                        <!-- Alt sıra -->
+                        <div class="galeri-item">
+                            <img src="/img/tambur.jpg" alt="Ayakkabılık Model 3">
+                            <div class="galeri-text-container">
+                                <p class="galeri-text-right">Tokyo</p>
+                                <p class="galeri-text-left">Venüs</p>
+                            </div>
+                        </div>
+                        <div class="galeri-item">
+                            <img src="/img/tambur1.jpg" alt="Ayakkabılık Model 4">
+                            <div class="galeri-text-container">
+                                <p class="galeri-text-left">Nirvana</p>
+                                <p class="galeri-text-right">Tambur</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="urun-bilgi">
+                    <h2>Ürün Özellikleri</h2>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Dayanıklı ve sağlam yapı</li>
+                        <li><i class="fas fa-check"></i> Aşınmaya karşı dirençli</li>
+                        <li><i class="fas fa-check"></i> Çeşitli doku seçenekleri</li>
+                        <li><i class="fas fa-check"></i> Kaliteli taban malzemesi</li>
+                        <li><i class="fas fa-check"></i> Uzun ömürlü kullanım</li>
+                        <li><i class="fas fa-check"></i> Her mevsim kullanıma uygun</li>
+                    </ul>
+
+                    <div class="urun-aciklama">
+                        <p>Ayakkabılık suni derilerimiz, ayakkabı üretiminde kullanılan özel formüle sahip malzemelerdir. Dayanıklı yapısı ve aşınmaya karşı direnci ile uzun ömürlü kullanım sağlar.</p>
+                        <p>Farklı doku ve kalınlık seçenekleri ile her tür ayakkabı tasarımına uygun çözümler sunar. Kaliteli taban malzemesi ile konforlu kullanım sağlar.</p>
+                    </div>
+
+                    <a href="../index.html#iletisim" class="iletisim-btn">
+                        <i class="fas fa-envelope"></i> İletişime Geç
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <footer>
+        <div class="footer-container">
+            <div class="footer-item">
+                <h4>Hakkımızda</h4>
+                <p>2023 yılında Gaziantep'te kurulan firmamız, kaliteli hizmet anlayışı ve yenilikçi çözümleriyle sektörde fark yaratmayı hedeflemektedir. Müşteri memnuniyetini ön planda tutarak, modern ve güvenilir hizmetler sunmaktayız. Kurulduğumuz günden itibaren teknoloji ve yeniliği takip ederek büyümeye devam ediyoruz..</p>
+            </div>
+            <div class="footer-item">
+                <h4>Telefon</h4>
+                <p><i class="fas fa-phone"></i> +905336377479</p>
+            </div>
+            <div class="footer-item">
+                <h4>İletişim</h4>
+                <p><i class="fas fa-envelope"></i> Email: ekremdemir27@gmail.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+    <script src="../js/main8.js"></script>
+    <body>
+        
+    
+</html> 

@@ -1,0 +1,829 @@
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Georgia', sans-serif;
+}
+
+img{
+    width: 100%; }
+
+section{
+    padding: 100px 0;
+    background: rgb(255, 255, 255);
+   
+}
+
+.section_title{
+    margin-bottom: 30px;
+   
+}
+.section_title h2{
+   
+   position: relative;
+   text-align: center;
+   color: #000;
+   font-size: 30px;
+   transition: all .5s ease-in-out;
+   font-weight: bold;
+}
+
+.section_title h2:hover{
+    background-color: #940000;
+}
+
+/* Sadece Kalite Politikamız başlığı için özel stil */
+#KalitePolitikamız .section_title h2 {
+    color: #fff;  /* Sadece bu başlık beyaz olacak */
+}
+
+/* -----------------HEADER--------------*/
+header{
+    background: rgb(255, 255, 255);
+    border-bottom: 1px solid rgba(238,238,238, 0.801);
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 80%;
+    padding: 10px 0;
+}
+
+.logo img{
+    width: 55%;
+}
+.nav_links{
+    display: flex;
+}
+.nav_links li a{
+  margin-left: 15px;
+  color: #000000;
+  padding: 5px 15px;
+  border-radius: 5px;
+  transition: all .5s ease-in-out;
+}
+.nav_links li a:hover{
+  background: #940000;  
+}
+/*ANASAYFA*/
+.inner_anasayfa{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 80%;
+    color: #000000;
+    animation: slideUp 1s ease-out;
+}
+.child_anasayfa{
+    flex-basis: 40%;
+}
+.child_anasayfa h1{
+    font-size: 50px;
+    color:#000000 ;
+}
+.span_child{
+    color: #940000;
+}
+.child_anasayfa p{
+    font-size: 25px;
+    margin-bottom: 12px;
+
+}
+.btn{
+    background: #940000;
+    padding: 12px 28px;
+    border-radius: 20px;
+    color: #000000;
+    border: 1px solid #940000;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.btn:hover{
+    background-color:transparent;
+    letter-spacing: 2px;
+}
+/*ÜRÜNLER*/
+#urunler {
+    padding: 50px 0;
+}
+
+.innerurunler {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+}
+
+/* Ürün kartları link stili */
+.innerurunler a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    display: block;
+}
+
+.innerurunler_child {
+    flex: 0 1 calc(33.333% - 30px);
+    min-width: 280px;
+    max-width: 350px;
+    text-align: center;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px #940000;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(100px);
+    will-change: transform, opacity;
+}
+
+.innerurunler_child:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(148, 0, 0, 0.3);
+}
+
+.innerurunler_child.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.innerurunler_child h3 {
+    font-size: 18px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.innerurunler_child img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+/* Mobil düzenleme */
+@media (max-width: 768px) {
+    .innerurunler {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .innerurunler_child {
+        width: 90%;
+        max-width: 350px;
+        margin: 0;
+    }
+
+    .innerurunler_child h3 {
+        font-size: 16px;
+        min-height: 40px;
+    }
+}
+
+.inner_testi{
+    padding-right: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display:grid;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    color: #000000;
+}
+.child_testi{
+    flex-basis: 46%;
+    margin-bottom: 30px;
+}
+.inner_contact{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 95%;
+}
+.child_contact{
+    flex-basis: 45%;
+}
+.child_contact form{
+    padding: 50px 40px;
+    background: #940000;
+    border-radius: 5px;
+}
+.child_contact form input,textarea{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: #ffffff;
+    border: none;
+    resize: none;
+    border-radius: 25px;
+    transition: .3s ease-in;
+}
+.child_contact form input,textarea:focus{
+    color: #000000 ;
+}
+.child_contact form input:focus{
+    letter-spacing: 1px;
+}
+.child_contact form textarea:focus{
+letter-spacing: 1px;
+}
+.child_contact form input:last-child{
+    margin-bottom: 0;
+    background: #940000;
+    border-radius: 1px solid #24caac;
+    transition: .3s;
+}
+.child_contact form input:last-child:hover{
+    background: #940000;
+    color: #000000;
+}
+/* Footer Stilleri */
+footer {
+    position: relative;
+    padding: 40px 0 20px;
+    background: #f9f9f9;
+    border-top: 1px solid #eee;
+    width: 100%;
+    margin-top: 50px; /* Üstten boşluk */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 200px; /* Minimum yükseklik */
+}
+
+.footer-item {
+    margin: 10px 20px;
+    min-width: 250px;
+    flex: 1; /* Her öğe eşit genişlikte */
+}
+
+.footer-item h4 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-item h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: #940000;
+}
+
+.footer-item p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.footer-item i {
+    margin-right: 10px;
+    color: #940000;
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    font-size: 12px;
+    color: #888;
+    padding: 5px 10px;
+    background: #f9f9f9;
+}
+
+/* Hover Efektleri */
+.footer-item p:hover i {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Mobil Düzenlemeler */
+@media (max-width: 768px) {
+    footer {
+        padding: 30px 0 60px; /* Alt padding arttırıldı */
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        min-height: auto;
+    }
+
+    .footer-item {
+        margin: 15px 0;
+        width: 90%;
+    }
+
+    .footer-item h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .copyright {
+        position: relative;
+        text-align: center;
+        margin-top: 30px;
+        right: 0;
+        width: 100%;
+        padding: 10px 0;
+    }
+}
+
+/* Daha küçük ekranlar için */
+@media (max-width: 480px) {
+    .footer-item {
+        width: 95%;
+    }
+
+    .footer-item h4 {
+        font-size: 16px;
+    }
+
+    .footer-item p {
+        font-size: 14px;
+    }
+}
+
+/* Footer'ın sayfanın altında kalması için */
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body > *:not(footer) {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+#menu_bar{
+    display:none ;
+}
+
+.kalite-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.kalite-ana-metin {
+    max-width: 800px;
+    margin: 20px auto;
+    line-height: 1.6;
+}
+
+.kalite-baslik {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 24px;
+    color: #940000;
+}
+
+.kalite-kartlar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    margin-right: 20px;
+    justify-content: end;
+    max-width: 1200px;
+    margin-left: auto;
+}
+
+.kalite-kart {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(148, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid #940000;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.3s ease-out;
+    will-change: transform, opacity;
+}
+
+.kalite-kart:hover{
+    transform: translateY(-5px);
+    background: #940000;
+    color: #fff;
+}
+
+.kalite-kart.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.kalite-kart h4 {
+    color: #940000;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.kalite-kart:hover h4,
+.kalite-kart:hover p {
+    color: #fff;
+}
+
+.kalite-kart p {
+    color: #666;
+    line-height: 1.5;
+}
+
+
+
+.testi_img img {
+    max-width: 300px;  /* Resim maksimum genişliği */
+    height: auto;      /* Oranı korumak için */
+    display: block;    /* Blok element */
+    margin: 0 auto;    /* Ortalamak için */
+}
+
+
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #000;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.5s ease-in-out;
+    object-fit: cover;
+    display: none;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.slide.active {
+    opacity: 1;
+    display: block !important;
+    transform: scale(1);
+    z-index: 1;
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 22px;
+    z-index: 100;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+/* Ürünler bölümü için responsive düzenleme */
+@media (max-width: 768px) {
+    .innerurunler {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .innerurunler_child {
+        width: 90%;
+        max-width: 350px;
+        margin: 0;
+    }
+
+    .innerurunler_child img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+}
+
+@media (min-width: 769px) {
+    .innerurunler {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .innerurunler_child {
+        flex: 0 1 calc(33.333% - 30px);
+        min-width: 280px;
+        max-width: 350px;
+    }
+}
+
+/* Bio bazlı ürün için özel stil */
+.innerurunler:last-child {
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.innerurunler:last-child .innerurunler_child {
+    max-width: 400px;
+}
+
+/* WhatsApp buton stili */
+button[type="submit"] {
+    display: block;
+    margin: 30px auto;
+    padding: 15px 30px;
+    background: #25d366; /* WhatsApp yeşili */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+/* Hover efekti */
+button[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* Tıklama efekti */
+button[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+/* Dalgalanma animasyonu */
+button[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+button[type="submit"]:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* WhatsApp ikonu ekle */
+button[type="submit"]::after {
+    content: '\f232'; /* WhatsApp ikonu */
+    font-family: 'Font Awesome 5 Brands';
+    margin-left: 10px;
+    display: inline-block;
+    animation: bounce 1s infinite;
+}
+
+/* Zıplama animasyonu */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+/* Mobil için düzenleme */
+@media (max-width: 768px) {
+    button[type="submit"] {
+        padding: 12px 25px;
+        font-size: 15px;
+    }
+}
+
+/* Temel animasyon tanımları */
+@keyframes slideUp {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Anasayfa animasyonu */
+/* Masaüstü için */
+.inner_anasayfa {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.child_anasayfa {
+    flex: 1;
+    padding: 20px;
+}
+
+.text-content {
+    padding-right: 40px;
+}
+
+.slider-wrapper {
+    max-width: 600px;
+}
+
+.slider-container {
+    width: 100%;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Mobil için */
+@media (max-width: 768px) {
+    .inner_anasayfa {
+        flex-direction: column-reverse; /* Slider'ı üste almak için */
+        padding: 0 10px;
+    }
+    
+    .child_anasayfa {
+        width: 100%;
+        padding: 10px;
+    }
+    .slider-button{
+        display: none;
+    }
+    
+    .text-content {
+        padding-right: 0;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .slider-wrapper {
+        max-width: 100%;
+    }
+    
+    .slider img {
+        max-height: 300px;
+        width: 100%;
+        object-fit: contain;
+        margin: 0 auto;
+    }
+    
+    .slider-container {
+        background: transparent;
+    }
+    
+    .text-content h1 {
+        font-size: 24px;
+    }
+    
+    .btn {
+        margin: 15px auto;
+    }
+}
+.slider-container {
+    position: relative;
+}
+
+.swipe-right, .swipe-left {
+    display: none;
+}
+
+@keyframes swipeRight {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes swipeLeft {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+@media (max-width: 768px) {
+    .swipe-right, .swipe-left {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: #940000;
+        font-size: 14px;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+    
+    .swipe-right {
+        position: relative;
+        top: 5px;          /* 10px'den 5px'e düşürdük */
+        right: 5px;        /* 10px'den 5px'e düşürdük */
+        z-index: 2;
+        background-color: rgba(255, 255, 255, 0.9); /* Arka plan biraz daha opak */
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 13px;   /* Yazıyı biraz daha küçülttük */
+    }
+    
+    .swipe-left {
+        position: absolute;
+        bottom: 20px;
+        left: 10px;
+        z-index: 2;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .swipe-right .swipe-animation {
+        animation: swipeRight 1.5s infinite ease-in-out;
+    }
+
+    .swipe-left .swipe-animation {
+        animation: swipeLeft 1.5s infinite ease-in-out;
+    }
+    
+    .slider-button {
+        display: none;
+    }
+}
